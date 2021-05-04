@@ -1,0 +1,80 @@
+html {
+    overflow-y:scroll;
+}
+
+body {
+    background:#fcfcfc;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+#mensagem-alerta{
+    display:none;
+}
+
+.navbar {
+    background: #1F305F;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #1F305F;
+}
+
+.menu-turma {
+    list-style: none;
+}
+
+.menu-turma li a{
+    color:#1F305F;
+}
+.menu-turma li a i{
+    display: none;
+}
+
+.menu-turma li a:hover{
+    font-weight: bold;
+    color:#1F305F;
+}
+
+.menu-turma li a:hover i{
+    display: inline;
+}
+
+.menu-turma hr {
+    border-color: #1F305F;
+}
+
+.ficha{
+    width: 550px;
+}
+
+.ficha-aluno{
+    width: 990px;
+}
+
+.foto-ficha{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.quadro-foto{
+    width:320px;
+}

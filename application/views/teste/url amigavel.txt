@@ -1,0 +1,50 @@
+criar aquivo com conteúdo abaixo
+.htaccess
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+alerações no apache
+
+
+1) Verificar os módulos que estão ativados no servidor Apache.
+
+ cd /etc/apache2/mods-enabled/
+$ ls
+
+Se não existir um módulo denominado "rewrite.load" na pasta, basta ir para o passo 2, caso exista, basta ir para passo 3.
+
+2) Habilitando o módulo rewrite.load no Apache:
+
+ sudo a2enmod rewrite
+
+
+ gora vamos partir para a alteração do arquivo de configuração do Apache, no passo 3.
+
+3) Alterando o arquivo de configuração do Apache, para consolidar o uso da "URL amigável".
+
+ sudo nano /etc/apache2/apache2.conf
+
+Encontre o seguinte código:
+
+<Directory /var/www/>
+   Options Indexes FollowSymLinks
+   AllowOverride None
+   Require all granted
+</Directory>
+
+<Directory /var/www/>
+   Options Indexes FollowSymLinks
+   AllowOverride All
+   Require all granted
+</Directory>
+
+Agora estamos chegando no último passo, o de reinicializar o servido Apache.
+
+4) Reinicializar o servidor Apache.
+
+ sudo /etc/init.d/apache2 restart
+
+ atenção nas aplicações na utilização do base URL para a url nao ficar com duas '//'.
+ 
